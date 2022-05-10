@@ -5,5 +5,6 @@ public class TestGit {
         System.out.println("第一次CRUD小项目");
         System.out.println("第一次CRUD小项目");
         System.out.println("第一次CRUD小项目");
+        System.out.println("第一次CRUD小项目，分支测试");
     }
 }
