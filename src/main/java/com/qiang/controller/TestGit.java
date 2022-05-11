@@ -8,5 +8,7 @@ public class TestGit {
         System.out.println("第一次CRUD小项目，分支测试");
         System.out.println("master分支");
         System.out.println("Hot-Fix第二次提交！");
+        System.out.println("pull code！");
+        
     }
 }
