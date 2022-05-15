@@ -31,7 +31,7 @@
 
 
     <!--配置与mybatis的整合-->
-    <bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <!--指定mybatis的全局配置文件-->
         <property name="configLocation" value="classpath:mybatis-config.xml"/>
         <!--数据源-->
@@ -46,6 +46,11 @@
         <property name="basePackage" value="com.qiang.dao"></property>
     </bean>
 
+    <!--配置一个可以批量的sqlSession-->
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
+        <constructor-arg name="executorType" value="BATCH"></constructor-arg>
+    </bean>
 
     <!--配置事务管理器-->
     <bean id="TransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
